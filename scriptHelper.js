@@ -15,7 +15,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  <img src="">
     */
     let div = document.getElementById("missionTarget");
-    div.InnerHTML=
+    div.innerHTML=
         `<h2>Mission Destination</h2>
    <ol>
        <li>Name: ${name}</li>
@@ -32,7 +32,7 @@ function validateInput(testInput) {
         return "Empty"
     }
     else if (isNaN(testInput)) {
-        return "Not a number"
+        return "Not a Number"
     }
     else if (!isNaN(testInput)) {
         return "Is a number"
@@ -94,29 +94,29 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         alert("Please input a valid data type");
    } else {
        list.style.visibility = "visible";
-       pilotStatus.InnerHTML = `Pilot ${pilot} is ready for launch`;
-       copilotStatus.InnerHTML = `Co-Pilot ${copilot} is ready for launch`;
+       pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+       copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready for launch`;
        let launchStatus = document.getElementById("launchStatus");
        
        if(fuelLevel < 10000 && cargoLevel <= 10000){
-        fuel.InnerHTML = 'Fuel Level too low for launch';
-        cargo.InnerHTML = 'Cargo load is low enough for launch';
-        launchStatus.InnerHTML = "Not ready for launch!";
+        fuel.innerHTML = 'Fuel Level too low for launch';
+        cargo.innerHTML = 'Cargo load is low enough for launch';
+        launchStatus.innerHTML = "Not ready for launch!";
         launchStatus.style.color = "#ff0000";
        }else if (fuelLevel >= 10000 && cargoLevel > 10000){
-        fuel.InnerHTML = "Fuel Level is high enough for launch";
-        cargo.InnerHTML = "Cargo load is too high for launch";
-        launchStatus.InnerHTML = "Not ready for launch!";
+        fuel.innerHTML = "Fuel Level is high enough for launch";
+        cargo.innerHTML = "Cargo load is too high for launch";
+        launchStatus.innerHTML = "Not ready for launch!";
         launchStatus.style.color = "#ff0000";
        }else if (fuelLevel < 10000 && cargoLevel > 10000){
-        fuel.InnerHTML = "Fuel Level too low for launch";
-        cargo.InnerHTML = "Cargo load is too high for launch";
-        launchStatus.InnerHTML = "Not ready for launch!";
+        fuel.innerHTML = "Fuel Level too low for launch";
+        cargo.innerHTML = "Cargo load is too high for launch";
+        launchStatus.innerHTML = "Not ready for launch!";
         launchStatus.style.color = "#ff0000";
        }else{
-        fuel.InnerHTML = "Fuel Level is sufficient for launch";
-        cargo.InnerHTML = "Cargo load is low enough for launch";
-        launchStatus.InnerHTML = "Ready for launch!";
+        fuel.innerHTML = "Fuel Level is sufficient for launch";
+        cargo.innerHTML = "Cargo load is low enough for launch";
+        launchStatus.innerHTML = "Ready for launch!";
         launchStatus.style.color = "#008000";
        }
        
@@ -142,7 +142,7 @@ async function myFetch(){
 //it takes an array of planet object
 //it creates a random index and uses that index to select a random element from the inputted planets array
 // 12.6.1. in the book
-function pickPlanet(listedplanets) {
+function pickPlanet(planets) {
     let index = Math.floor(Math.random()*planets.length);
     return planets[index]
 }

@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { pickPlanet } = require("./scriptHelper");
+
 
 // const { formSubmission, pickPlanet, addDestinatid
 
@@ -34,9 +34,9 @@ window.addEventListener("load", function () {
         let copilotInput = document.querySelector("input[name=copilotName]");
         let copilot = copilotInput.value;
         let fuelInput = document.querySelector("input[name=fuelLevel]");
-        let fuelLevel = Number(fuelInput.value);
+        let fuelLevel = (fuelInput.value);
         let cargoInput = document.querySelector("input[name=cargoMass]");
-        let cargoLevel = Number(cargoInput.value);
+        let cargoLevel = (cargoInput.value);
         // we will want to do this 4 times, one for each element
         //Now that we have all 4 form input elements selected
         //we can pass their VALUES into our formSubmission function
